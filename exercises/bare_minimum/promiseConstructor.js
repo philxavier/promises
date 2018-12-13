@@ -36,7 +36,6 @@ var getStatusCodeAsync = function(url) {
     });
   });
 };
-// "Complete bare_minimum/promiseConstructor.js exercises"
 
 // Export these functions so we can test them and reuse them in later exercises
 module.exports = {
