@@ -6,8 +6,13 @@ var fs = require('fs');
 var request = require('request');
 var readline = require('readline');
 
+var nodeStyle = require('./callbackReview.js');
+// var pluckFirstLineFromFileAsync = Promise.promisify(nodeStyle.pluckFirstLineFromFile);
+// var getStatusCodeAsync = Promise.promisify(nodeStyle.getStatusCode);
+
 // This function should retrieve the first line of the file at `filePath`
 var pluckFirstLineFromFile = function (filePath, callback) {
+
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
@@ -22,6 +27,7 @@ var pluckFirstLineFromFile = function (filePath, callback) {
 
 // This function should retrieve the status code of a GET request to `url`
 var getStatusCode = function (url, callback) {
+
   request(url, (err, response, body) => {
     if (err) {
       callback(err, null);
